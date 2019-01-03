@@ -12,9 +12,12 @@ class User(models.Model):
     userid = models.AutoField(primary_key=True)
     username = models.CharField("用户名",max_length = 12)
     nickname = models.CharField("用户昵称",max_length = 30)
+    avatoridx = models.IntegerField('头像索引号')
     gender = models.IntegerField("用户性别",choices=GENDER)
     cellphone = models.CharField("手机号码", max_length = 11 )
     password = models.CharField("密码", max_length = 40)
+    gold = models.IntegerField('金币')
+    diamond = models.IntegerField('钻石')
     createtime = models.DateTimeField(auto_now=True)
     agentid = models.ForeignKey('Agent', db_column='agentid' , blank=True, null=True, on_delete = models.SET_NULL)
     promoteid = models.ForeignKey('Promote', db_column='promoteid',blank=True, null=True, on_delete = models.SET_NULL)
@@ -22,6 +25,7 @@ class User(models.Model):
 
     class Meta:
         db_table = 'User'
+
 
 
 class Agent(models.Model):
