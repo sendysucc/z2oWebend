@@ -51,7 +51,14 @@ class Promote(models.Model):
 
 
 class Game(models.Model):
+
+    GTYPE = {
+        ('百人游戏',1),
+        ('匹配游戏',2),
+    }
+
     gameid = models.AutoField(primary_key=True)
+    gametype = models.IntegerField(choices=GTYPE)
     name = models.CharField('游戏名',max_length = 30)
     minplayers = models.IntegerField('最下游戏人数')
     maxplayers = models.IntegerField('最大游戏人数')
