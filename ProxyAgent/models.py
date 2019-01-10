@@ -22,6 +22,7 @@ class User(models.Model):
     agentid = models.ForeignKey('Agent', db_column='agentid' , blank=True, null=True, on_delete = models.SET_NULL)
     promoteid = models.ForeignKey('Promote', db_column='promoteid',blank=True, null=True, on_delete = models.SET_NULL)
     disable = models.BooleanField('是否账号被禁用',default=False)
+    isrobot = models.BooleanField('是否为机器人', default = False)
 
     class Meta:
         db_table = 'User'
