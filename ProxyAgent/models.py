@@ -32,6 +32,7 @@ class User(models.Model):
 class Agent(models.Model):
     agentid = models.AutoField(primary_key=True)
     name = models.CharField("代理名称",max_length = 50)
+    code = models.CharField('代理编码',max_lenth = 20)
     cellphone = models.CharField("手机号码",max_length = 11)
     password = models.CharField("密码",max_length = 40)
     createtime = models.DateTimeField(auto_now=True)

@@ -81,7 +81,7 @@ DATABASES = {
     # }
     'default' : {
         'ENGINE':'django.db.backends.mysql',
-        'NAME':'z2osrv',
+        'NAME':'z2oserver',
         'USER':'sendy',
         'PASSWORD':'sendy',
         'HOST':'localhost',
