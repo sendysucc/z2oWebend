@@ -106,3 +106,22 @@ class LoginRecord(models.Model):
 
     class Meta:
         db_table = 'LoginRecord'
+
+# 公告
+class Notice(models.Model):
+    id = models.AutoField(primary_key=True)
+    msg = models.TextField()
+    pubtime = models.DateTimeField()
+
+    class Meta:
+        db_table = 'Notice'
+
+#消息
+class Mail(models.Model):
+    id = models.AutoField(primary_key=True)
+    msg = models.TextField()
+    pubtime = models.DateTimeField()
+
+    class Meta:
+        db_table = 'Mail'
+
